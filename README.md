@@ -73,6 +73,6 @@ $webflow->removeItem($collectionId, $itemId);
 
 ```
 # Install Composer
-composer require expertlead/webflow-php-sdk
+composer require ulovdomov/webflow-php-sdk
 ```
 No extra dependencies! You are welcome ;)
