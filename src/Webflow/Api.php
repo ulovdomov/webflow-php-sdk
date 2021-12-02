@@ -7,9 +7,9 @@ use Webflow\WebflowException;
 class Api
 {
     const WEBFLOW_API_ENDPOINT = 'https://api.webflow.com';
-    const WEBFLOW_API_USERAGENT = 'Expertlead Webflow PHP SDK (https://github.com/expertlead/webflow-php-sdk)';
+    const WEBFLOW_API_USERAGENT = 'Webflow PHP SDK (https://github.com/ulovdomov/webflow-php-sdk)';
 
-    private $client;
+	private $client;
     private $token;
 
     private $requests;
@@ -92,8 +92,8 @@ class Api
     private function parse($response)
     {
         $json = json_decode($response);
-        if($json===null) {
-            throw new \Exception('Failed json decode: ' . $response);
+        if( !is_object( $json ) ) {
+			throw new \Exception('Failed json decode: ' . $response);
         }
         if (isset($json->code) && isset($json->msg)) {
             $error = $json->msg;
